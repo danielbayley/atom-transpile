@@ -1,0 +1,43 @@
+{
+  "name": "transpile",
+  "version": "0.0.0",
+  "description": "Transpile code between languages in Atom.",
+  "keywords": [
+    "transpile",
+    "refactor",
+    "convert"
+  ],
+  "homepage": "https://atom.io/packages/transpile",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielbayley/atom-transpile.git"
+  },
+  "bugs": {
+    "url": "https://github.com/danielbayley/atom-transpile/issues"
+  },
+  "author": "Daniel Bayley <daniel.bayley@me.com> (https://github.com/danielbayley)",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "atom": "*"
+  },
+  "main": "./lib/index",
+  "consumedServices": {
+    "transpile": {
+      "versions": {
+        "^1.0.0": "transpiler"
+      }
+    }
+  },
+  "configSchema": {
+    "replace": {
+      "description": "Replace source file in tree view?",
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "projectmanager": {
+    "title": "transpile",
+    "template": "atom-package"
+  }
+}
