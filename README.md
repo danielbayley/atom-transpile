@@ -2,7 +2,7 @@
 
 Transpile code in [Atom]
 ========================
-[Transpile] code between languages within [Atom] in a standard way.
+Easily [transpile] code between languages within [Atom] in a standard way.
 
 Transpile selected blocks of code in the editor, or else the current _[buffer]_, in which case the appropriate _target [grammar]_ will automatically be applied on success.
 

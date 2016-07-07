@@ -1,7 +1,7 @@
 {
   "name": "transpile",
   "version": "0.1.1",
-  "description": "Transpile code between languages in Atom.",
+  "description": "Easily transpile code between languages in a standard way.",
   "keywords": [
     "transpile",
     "refactor",
@@ -35,9 +35,5 @@
       "type": "boolean",
       "default": false
     }
-  },
-  "projectmanager": {
-    "title": "transpile",
-    "template": "atom-package"
   }
 }
