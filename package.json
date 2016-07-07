@@ -31,7 +31,7 @@
   },
   "configSchema": {
     "replace": {
-      "description": "Replace source file in tree view?",
+      "description": "Replace source files in tree view?",
       "type": "boolean",
       "default": false
     }

@@ -1,3 +1,5 @@
+[![apm]](https://atom.io/packages/transpile)
+
 Transpile code in [Atom]
 ========================
 [Transpile] code between languages within [Atom] in a standard way.
@@ -53,7 +55,7 @@ module.exports =
 Notice that the `from.fileTypes` `[array]` can contain either file `.ext`ensions, complete file names, or a valid _CSS [attribute selector]_.
 
 Your `transpile:` _method_ should simply **return the transpiled code**, and will be supplied with the `source` code, along with the following [optional] arguments:
-* An `indent` `'string'` provided as a potential option to pass on to the transpiler.
+* An `indent`ation `'string'` provided as a potential option to pass on to the underlying transpiler, since formatting should be preserved if possible.
 * The current [Text`editor`] `{object}` instance.
 
 Multiple transpilers can also be bundled in the same package; _[transpile-decaf]_ for example [provides a choice] between _[decaf]_ or _[decaffeinate]_, whereas _[transpile-cson]_ can transpile between both _[CSON] and_ JSON.
@@ -84,7 +86,7 @@ License
 [decaf]:										https://github.com/rainforestapp/decaf#decaf-js
 [decaffeinate]:							https://github.com/decaffeinate/decaffeinate#decaffeinate-
 [lebab]:										http://lebab.io
-[ES6]:											https://babeljs.io/docs/learn-es2015
+[ES6]:											http://babeljs.io/#es2015
 [CSON]:											https://github.com/bevry/cson#what-is-cson
 [pug]:											https://github.com/pugjs/pug
 
@@ -93,6 +95,6 @@ License
 [buffer]:										http://flight-manual.atom.io/getting-started/sections/atom-basics/#basic-terminology
 [Text`editor`]:							https://atom.io/docs/api/latest/TextEditor
 [attribute selector]:				https://css-tricks.com/almanac/selectors/a/attribute
-[transpile-decaf]:					https://github.com/danielbayley/atom-transpile-decaf/blob/master/index.coffee#L14-L23
+[transpile-decaf]:					https://github.com/danielbayley/atom-transpile-decaf/blob/master/index.coffee#L14-L22
 [provides a choice]:				https://github.com/danielbayley/atom-transpile-decaf/blob/master/package.json#L40-L50
 [transpile-cson]:						https://github.com/cazala/atom-transpile-cson/blob/master/lib/index.coffee
