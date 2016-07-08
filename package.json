@@ -1,6 +1,6 @@
 {
   "name": "transpile",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Easily transpile code between languages in a standard way.",
   "keywords": [
     "transpile",
