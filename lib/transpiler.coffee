@@ -21,7 +21,11 @@ class Transpiler
 
 			{scopeName, fileTypes} = @plugin?.from
 			selector = scopeName?.replace /\./g,' '
-			context = ["atom-text-editor:not([mini])[data-grammar^='#{selector}']"]
+			context = [
+				"atom-text-editor:not([mini])[data-grammar^='#{selector}']",
+				".tree-view"
+			]
+			selectedSelectors = [];
 
 			unless fileTypes?
 				{fileTypes} = atom.grammars.grammarForScopeName scopeName
@@ -32,18 +36,30 @@ class Transpiler
 					selector = "[data-name#{selector}]"
 
 				context.push ".tree-view .file #{selector}"
+				selectedSelectors.push ".tree-view .file.selected #{selector}"
 		catch err
 			@error err
 
 		@subs.add atom.commands.add context.join(),
-			command, ({target}) => @transpile target?.dataset.path
+			command, ({target}) =>
+				paths = []
+				if treeView = target.closest ".tree-view"
+					paths.push i.dataset.path for i in treeView.querySelectorAll selectedSelectors.join()
+				else
+					paths.push target?.dataset.path
+
+				@transpile path for path in paths
 
 		submenu = [
 			label: "Transpile"
 			submenu: [
 				label: name #name[0].toUpperCase() + name[1..-1]
 				command: command
-		]	]
+			]
+			shouldDisplay: ({target}) =>
+				return true unless treeview = target.closest ".tree-view"
+				return !!treeview.querySelector selectedSelectors.join()
+		]
 		@subs.add atom.menu.add [
 			label: "Packages"
 			submenu: submenu
